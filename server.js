@@ -7,9 +7,8 @@ const projectRouter = require("./data/routers/projects");
 const server = express();
 
 server.use(express.json(), helmet(), morgan('dev'))
-server.use("/api/actions",actionRouter);
-server.use("/api/projects", projectRouter);
-
+// server.use("/api/actions",actionRouter);
+// server.use("/api/projects", projectRouter);
 
 server.get('/', (req, res, next) => {
     res.send(`
@@ -17,7 +16,5 @@ server.get('/', (req, res, next) => {
       <p>This is my Sprint Challenge for Web Api's</p>
       `);
   });
-
-
 
 module.exports = server;
